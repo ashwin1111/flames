@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">flames</string>
+    <string name="flames">FLAMES</string>
+    <string name="calculate">Calculate</string>
+    <string name="your_name">Your Name :</string>
+    <string name="crush_name">Crush Name :</string>
+</resources>

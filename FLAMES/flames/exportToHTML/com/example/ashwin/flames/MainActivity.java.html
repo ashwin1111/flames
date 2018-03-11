@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(0,0,255); }
+.s4 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.example.ashwin.flames; 
+ 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity; 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.app.Activity; 
+</span><span class="s0">import </span><span class="s1">android.view.Menu; 
+</span><span class="s0">import </span><span class="s1">android.view.MenuItem; 
+</span><span class="s0">import </span><span class="s1">android.view.View; 
+</span><span class="s0">import </span><span class="s1">android.widget.*; 
+ 
+</span><span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity { 
+    Button f; 
+    EditText d,d1,d2; 
+    </span><span class="s0">int </span><span class="s1">n,n1,z,q; 
+    StringBuffer s,s1; 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+        f=(Button)findViewById(R.id.button2); 
+        d=(EditText) findViewById(R.id.editText4); 
+        d1=(EditText) findViewById(R.id.editText5); 
+        d2=(EditText) findViewById(R.id.editText6); 
+        </span><span class="s2">//z=n+n1;</span><span class="s1"> 
+        f.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() 
+        { 
+            </span><span class="s0">public void </span><span class="s1">onClick(View view) 
+            { 
+                </span><span class="s0">final </span><span class="s1">String a1=String.valueOf(d.getText()); 
+                </span><span class="s0">final </span><span class="s1">String a2=String.valueOf(d1.getText()); 
+                s=</span><span class="s0">new </span><span class="s1">StringBuffer(a1); 
+                s1=</span><span class="s0">new </span><span class="s1">StringBuffer(a2); 
+                n=s.length(); 
+                n1=s1.length(); 
+                </span><span class="s0">final </span><span class="s1">String aa= String.valueOf(d1.getText()); 
+                </span><span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s3">0</span><span class="s1">;i&lt;n;i++) 
+                { 
+                    </span><span class="s0">char </span><span class="s1">c=s.charAt(i); 
+                    </span><span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">j=</span><span class="s3">0</span><span class="s1">;j&lt;n1;j++) 
+                    { 
+                        </span><span class="s0">char </span><span class="s1">d=s1.charAt(j); 
+                        </span><span class="s0">if</span><span class="s1">(c==d){ 
+ 
+                            s.deleteCharAt(i); 
+                            s1.deleteCharAt(j); 
+                            n=s.length(); 
+                            n1=s1.length(); 
+                            </span><span class="s2">//z=z-2;</span><span class="s1"> 
+                            i=</span><span class="s3">0</span><span class="s1">; 
+                            j=</span><span class="s3">0</span><span class="s1">; 
+ 
+                        } 
+                    } 
+                } 
+                </span><span class="s0">int </span><span class="s1">n2=n+n1; 
+                </span><span class="s2">//int l=6;</span><span class="s1"> 
+                </span><span class="s0">int </span><span class="s1">z1; 
+                StringBuffer s2=</span><span class="s0">new </span><span class="s1">StringBuffer(</span><span class="s4">&quot;flames&quot;</span><span class="s1">); 
+                String s3=</span><span class="s0">new </span><span class="s1">String(); 
+                </span><span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s3">0</span><span class="s1">;i&lt;</span><span class="s3">5</span><span class="s1">;i++) 
+                { 
+                    </span><span class="s0">int </span><span class="s1">q=-</span><span class="s3">1</span><span class="s1">,l=</span><span class="s3">0</span><span class="s1">,p=</span><span class="s3">0</span><span class="s1">; 
+                    </span><span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">j=</span><span class="s3">1</span><span class="s1">;j&lt;=n2;j++) 
+                    { 
+                       q++; 
+                       l++; 
+                       </span><span class="s0">if</span><span class="s1">(q&gt;s2.length()-</span><span class="s3">1</span><span class="s1">) 
+                       { 
+                           </span><span class="s0">char </span><span class="s1">e=s2.charAt(p); 
+                           </span><span class="s0">if</span><span class="s1">(l==n2) 
+                           { 
+                               s2.deleteCharAt(p); 
+                               s3=s2.substring(p,s2.length()); 
+                               s2.delete(p,s2.length()); 
+                               s2.insert(</span><span class="s3">0</span><span class="s1">,s3); 
+                               </span><span class="s0">break</span><span class="s1">; 
+                           } 
+                           </span><span class="s0">else</span><span class="s1"> 
+                           { 
+                               p++; 
+                               </span><span class="s0">if</span><span class="s1">(p==s2.length()) 
+                               { 
+                                   p=</span><span class="s3">0</span><span class="s1">; 
+                               } 
+                           } 
+                       } 
+                       </span><span class="s0">else</span><span class="s1"> 
+                       { 
+                           </span><span class="s0">char </span><span class="s1">e=s2.charAt(q); 
+                           </span><span class="s0">if</span><span class="s1">(l==n2) 
+                           { 
+                               s2.deleteCharAt(n); 
+                               s3=s2.substring(n,s2.length()); 
+                               s2.delete(n,s2.length()); 
+                               s2.insert(</span><span class="s3">0</span><span class="s1">,s3); 
+                               </span><span class="s0">break</span><span class="s1">; 
+                           } 
+ 
+                       } 
+                    } 
+                } 
+                </span><span class="s0">char </span><span class="s1">result=s2.charAt(</span><span class="s3">0</span><span class="s1">); 
+                </span><span class="s0">switch</span><span class="s1">(result) 
+                { 
+                    </span><span class="s0">case </span><span class="s4">'f'</span><span class="s1">: 
+                        d2.setText(aa+</span><span class="s4">&quot; is your Friend!!!&quot;</span><span class="s1">); 
+                        </span><span class="s0">break</span><span class="s1">; 
+                    </span><span class="s0">case </span><span class="s4">'l'</span><span class="s1">: 
+                        d2.setText(aa+</span><span class="s4">&quot; is your Love!!!&quot;</span><span class="s1">); 
+                        </span><span class="s0">break</span><span class="s1">; 
+                    </span><span class="s0">case </span><span class="s4">'a'</span><span class="s1">: 
+                        d2.setText(aa+</span><span class="s4">&quot; is your Affection!!!&quot;</span><span class="s1">); 
+                        </span><span class="s0">break</span><span class="s1">; 
+                    </span><span class="s0">case </span><span class="s4">'m'</span><span class="s1">: 
+                        d2.setText(aa+</span><span class="s4">&quot; gonna Marry You!!!&quot;</span><span class="s1">); 
+                        </span><span class="s0">break</span><span class="s1">; 
+                    </span><span class="s0">case </span><span class="s4">'e'</span><span class="s1">: 
+                        d2.setText(aa+ </span><span class="s4">&quot; is your Enemy!!!&quot;</span><span class="s1">); 
+                        </span><span class="s0">break</span><span class="s1">; 
+                    </span><span class="s0">case </span><span class="s4">'s'</span><span class="s1">: 
+                        d2.setText(aa +</span><span class="s4">&quot; is your Sister!!!&quot;</span><span class="s1">); 
+                        </span><span class="s0">break</span><span class="s1">; 
+                } 
+                </span><span class="s2">//d2.setText(&quot;result&quot;);</span><span class="s1"> 
+            } 
+}); 
+    }} 
+</span></pre>
+</body>
+</html>
